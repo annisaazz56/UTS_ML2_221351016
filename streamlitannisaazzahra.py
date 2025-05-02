@@ -13,6 +13,7 @@ try:
     label_encoder = joblib.load("label_encoder.pkl")
 except Exception as e:
     st.warning("Model/scaler/label_encoder gak ketemu. Prediksi random aja ya! 🤷‍♂️")
+    st.error(f"Detail error: {e}")  # <<< tampilkan error asli di Streamlit
     model = None
     scaler = None
     label_encoder = None
