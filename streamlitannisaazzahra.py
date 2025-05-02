@@ -3,9 +3,11 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 import joblib
+import os
 
 # --- LOAD MODEL DAN SCALER ---
 try:
+    base_path = os.path.dirname(os.path.abspath(__file__))
     model = tf.keras.models.load_model("drybean_model.h5")
     scaler = joblib.load("scaler.pkl")
     label_encoder = joblib.load("label_encoder.pkl")
